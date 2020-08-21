@@ -228,7 +228,8 @@ bintray {
  run install and run publishing Tasks.
 
 
-![alt text](https://i.ibb.co/kG7LDRB/13.png)
+
+![alt text](https://i.ibb.co/GcPnCZt/14.png)
 
 
 
@@ -236,7 +237,6 @@ bintray {
 
 
 
-![alt text](https://i.ibb.co/GcPnCZt/14.png)
-
+![alt text](https://i.ibb.co/kG7LDRB/13.png)
 
 
