@@ -240,3 +240,5 @@ bintray {
 ![alt text](https://i.ibb.co/kG7LDRB/13.png)
 
 
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
