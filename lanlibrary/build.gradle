@@ -6,12 +6,16 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
+  //  dokka {
+   //     outputFormat = 'html'
+   //     outputDirectory = "$buildDir/javadoc"
+   // }
     task dokkaJavadoc(type: org.jetbrains.dokka.gradle.DokkaTask) {
         outputFormat = 'javadoc'
         outputDirectory = "$buildDir/javadoc"
     }
 
-    task javadocJar(type: Jar, dependsOn: dokkaJavadoc) {
+    task javadocJars(type: Jar, dependsOn: dokkaJavadoc) {
         classifier = 'javadoc'
         from "$buildDir/javadoc"
     }
@@ -43,3 +47,27 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
+ext {
+    bintrayRepo = 'lanlibrary' // Repo name in bintray dashboard
+    bintrayName = 'com.example.lanlibrary' // package name of the bintray repo
+
+    publishedGroupId = 'com.example.lanlibrary'   // this is the ID we want to see in implementation line
+    libraryName = 'lanlibrary'     // this is the module name of library
+    artifact = 'lanlibrary'        // this is the artifact we want to see in implementation line
+
+    libraryDescription = 'Test project library description' // description of library
+
+    siteUrl = 'https://github.com/maliabd-al-majid/lanlibrary'    // git repo url
+    gitUrl =  'https://github.com/maliabd-al-majid/lanlibrary.git' // git repo vcs url
+
+    libraryVersion = '1.0.1'      // library version
+
+    developerId = 'mohamednadeem'                // This is your bintray username
+    developerName = 'mohamednadeem'              // Developer's name
+    developerEmail = 'maliabd.al.majid@gmail.com'                // Developer's email
+
+    licenseName = 'The Apache Software License, Version 2.0'  // for example, The Apache Software License, Version 2.0
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'   // for example, http://www.apache.org/licenses/LICENSE-2.0.txt
+    allLicenses = ["Apache-2.0"]    // array of licenses, for example, ["Apache-2.0"]
+}
+apply from: 'publish.gradle'
